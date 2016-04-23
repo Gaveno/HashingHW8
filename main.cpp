@@ -34,8 +34,8 @@ istream& getWord(istream& fin, string& w)
 }
 
 void spellCheck(string filename) {
-    unordered_map<int, string> words;
-    unordered_map<int, string> dictionary;
+    unordered_map<int, string> words;           // User list of words
+    unordered_map<int, string> dictionary;      // Dictionary to check against
     int keyGen = 0;
 
     ifstream file;
@@ -94,7 +94,7 @@ void spellCheck(string filename) {
     for (auto &x: words) {
         bool correct = false;
         for (auto &m: dictionary) {
-            if (x.second == m.second) {
+            if (x.second == m.second) { // Word is a match in dictionary file
                 correct = true;
             }
         }
